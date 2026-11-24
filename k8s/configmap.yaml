@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: arbiter-config
+  namespace: arbiter
+data:
+  config.yaml: |
+    policy:
+      tiers:
+        - {name: decider, type: mock, skill: 0.95, cost: 1, latency_ms: 5, threshold: 0.85}
+        - {name: reasoner, type: mock, skill: 1.0, cost: 100, latency_ms: 200}
+      intents: [refund, consult, complaint, order, shipping, invoice, account, cancel]

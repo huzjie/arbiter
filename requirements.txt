@@ -1,0 +1,2 @@
+# arbiter 零依赖核心；PyYAML 仅用于读取 YAML 配置（可选）
+PyYAML>=6.0

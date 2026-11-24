@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: arbiter
+  namespace: arbiter
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: arbiter
+  template:
+    metadata:
+      labels:
+        app: arbiter
+    spec:
+      containers:
+        - name: arbiter
+          image: huzjie/arbiter:latest
+          ports:
+            - containerPort: 8000
+          livenessProbe:
+            httpGet: {path: /health, port: 8000}
+          readinessProbe:
+            httpGet: {path: /health, port: 8000}

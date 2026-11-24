@@ -1,0 +1,27 @@
+# 把本文件复制为 config.yaml 后按需修改
+policy:
+  name: default
+  tiers:
+    - name: decider
+      type: mock
+      skill: 0.95
+      cost: 1
+      latency_ms: 5
+      threshold: 0.85
+      temperature: 1.0
+    - name: reasoner
+      type: mock
+      skill: 1.0
+      cost: 100
+      latency_ms: 200
+  budget:
+    enabled: false
+    max_cost: 5000
+    max_latency_ms: 10000
+  cache:
+    enabled: true
+    backend: lru
+    capacity: 1000
+    ttl_seconds: 300
+    semantic_threshold: 0.92
+  intents: [refund, consult, complaint, order, shipping, invoice, account, cancel]

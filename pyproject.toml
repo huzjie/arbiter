@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arbiter"
+version = "1.0.0"
+description = "分层决策路由网关：大模型推理 + 小决策模型高频判断"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+dependencies = ["PyYAML>=6.0"]
+
+[project.scripts]
+arbiter = "arbiter.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["arbiter*"]

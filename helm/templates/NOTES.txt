@@ -1,0 +1,5 @@
+arbiter 已部署。
+
+验证：
+  kubectl port-forward svc/{{ include "arbiter.fullname" . }} 8000:8000
+  curl localhost:8000/health

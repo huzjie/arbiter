@@ -1,0 +1,7 @@
+policy:
+  name: confidence_gate
+  tiers:
+    - {name: decider, type: mock, skill: 0.95, cost: 1, latency_ms: 5, threshold: 0.85}
+    - {name: reasoner, type: mock, skill: 1.0, cost: 100, latency_ms: 200}
+  cache: {enabled: true, capacity: 1000, ttl_seconds: 300}
+  intents: [refund, consult, complaint, order, shipping, invoice, account, cancel]

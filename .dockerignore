@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.git/
+tests/
+docs/
+examples/
+.env
+config.yaml
